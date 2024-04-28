@@ -26,7 +26,7 @@
                 <input type="checkbox" required v-model="terms">
                 <label>Accept terms and conditions</label>
             </div>
-            <button v-on:click="">Submit</button>
+            <button class="action-button" v-on:click="">Submit</button>
         </div> 
     </div>
 </template>
