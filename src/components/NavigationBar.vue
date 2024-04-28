@@ -8,8 +8,6 @@
             <li><a href="#"> For business </a></li>   
          </ul>
         </nav> 
-        <button class="login" >Log In</button>
-        <button class="sign-up"> Sign Up </button>
     </nav>
 
 </template>
@@ -24,7 +22,7 @@
     flex-direction: row;
   }
 
-  .header-container .logo {
+.header-container .logo {
     float: left;
     width: 100%;
     height: 100px;
@@ -32,19 +30,19 @@
     align-items: center;
   }
 
-  .header-container .menu {
+.header-container .menu {
     position: relative;
     align-self: center;
     margin-left: 5%;
   }
 
-  .menu-list li {
+.menu-list li {
     display: inline;
     list-style: none;
   }
 
   
-  .menu-list li a {
+.menu-list li a {
     text-decoration: none;
     margin-right: 30px;
     font-size: 18px;
@@ -54,11 +52,11 @@
   }
 
 
-  .menu-list li a:hover {
+.menu-list li a:hover {
     color: greenyellow;
   }
   
-  .menu-list li a:active {
+.menu-list li a:active {
     color: #04AA6D;
   }
 

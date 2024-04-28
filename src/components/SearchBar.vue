@@ -23,6 +23,18 @@
             <label>Culture</label>
             <input type="checkbox" value="Shopping" v-model="tags">
             <label>Shopping</label>
+            <input type="checkbox" value="Business trip" v-model="tags">
+            <label>Business trip</label>
+        </div>
+        <div>
+            <input type="checkbox" value="1-day-trip" v-model="tags">
+            <label>1-day-trip</label>
+            <input type="checkbox" value="2-3-days-trip" v-model="tags">
+            <label>2-3-days-trip</label>
+            <input type="checkbox" value="1-week-trip" v-model="tags">
+            <label>1-week-trip</label>
+            <input type="checkbox" value="loger trip" v-model="tags">
+            <label>Longer trip</label>
         </div>
       <ul class="tags-ul" v-if="tags">
         <li v-for="h in tags">#{{ h }}</li>
@@ -62,7 +74,7 @@
     background-color: white;
     display: inline-flex;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
   }
   
   .search-input {

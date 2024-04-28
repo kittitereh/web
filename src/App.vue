@@ -9,13 +9,14 @@
             <li><a href="#"> For business </a></li>   
          </ul>
         </nav> 
-        <button class="login" @click="toggleLoginPopup"> Log In </button>
-        <button class="sign-up" @click="toggleCreateAccountPopup"> Sign Up </button>
+        <button class="action-button" @click="toggleLoginPopup"> SignIn </button>
+        <button class="action-button" @click="toggleCreateAccountPopup"> SignUp </button>
     </nav>
     <SearchBar/>
+    <button class="action-button">Find a tour</button>
     <LoginPopup v-if="showLoginPopup" @close="toggleLoginPopup"/>
     <CreateAccountPopup  v-if="showCreateAccountPopup" @close="toggleCreateAccountPopup"/>
-    <button @click="toggleLoginPopup">Write</button>
+    <!-- <button @click="toggleLoginPopup">Write</button> -->
   </div>
 </template>
 
@@ -62,6 +63,7 @@ export default {
     background-color: gray;
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 
   .header-container .logo {
@@ -100,6 +102,56 @@ export default {
   
   .menu-list li a:active {
     color: #04AA6D;
+  }
+
+  .header-container .action-button{
+    margin: 5px;
+    background-color: white;
+    border: 0;
+  }
+
+  .action-button {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    min-width: 120px;
+    min-height: 40px;
+    max-width: 160px;
+    max-height: 60px;
+    will-change: transform;
+  }
+
+  .action-button:disabled {
+    pointer-events: none;
+  }
+
+  .action-button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+
+  .action-button:active {
+    box-shadow: none;
+    transform: translateY(0);
   }
 
 </style>
