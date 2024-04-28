@@ -15,15 +15,18 @@
                     <option value="Russia"> Russia </option>
                     <option value="China"> China </option>
                 </select>
-                <input type="country" requred v-model="country">
                 <label for = "is_guide">Role:</label>
                 <select type="is_guide" required>
                     <option value="guide"> Guide </option>
                     <option value="tourist"> Tourist</option>
                 </select>
-                <input> Accept terms and conditions <input>
-                <button v-on:click="">Submit</button>
-            </form>
+               
+            </form> 
+            <div>
+                <input type="checkbox" required v-model="terms">
+                <label>Accept terms and conditions</label>
+            </div>
+            <button v-on:click="">Submit</button>
         </div> 
     </div>
 </template>
@@ -39,6 +42,7 @@
             password: '',
             country: '',
             role: 'Tourist',
+            terms: false,
         }
         
     },
@@ -69,7 +73,7 @@
 
     label{
         display: inline-block;
-        margin: 25px 0 15 px;
+        margin: 25px 0 15px;
     }
 
     input, select {
@@ -77,5 +81,13 @@
         width: 100%;
         box-sizing: border-box;
         padding: 10px 6px;
+    }
+
+    input[type="checkbox"] {
+        display: inline-block;
+        margin-right: 5px;
+        margin-left: 20px;
+        position: relative;
+        width: 16px;
     }
 </style>

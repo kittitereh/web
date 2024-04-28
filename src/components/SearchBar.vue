@@ -6,11 +6,24 @@
               class="search-input"
               placeholder="e.g. Moscow"
               type="tags"
-              v-model="tags"/>
+              v-model="tag"
+              @keyup="addTag"/>
         <button class="search-button" @click="searchOnTags">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
+      <div>
+            <input type="checkbox" value="Food" v-model="tags">
+            <label>Food</label>
+            <input type="checkbox" value="For kids" v-model="tags">
+            <label>For kids</label>
+            <input type="checkbox" value="Russian history" v-model="tags">
+            <label>Russian history</label>
+            <input type="checkbox" value="Culture" v-model="tags">
+            <label>Culture</label>
+            <input type="checkbox" value="Shopping" v-model="tags">
+            <label>Shopping</label>
+        </div>
       <ul class="tags-ul" v-if="tags">
         <li v-for="h in tags">#{{ h }}</li>
       </ul>
@@ -24,6 +37,7 @@
     name: 'App',
     data(){
       return{
+        tag: '',
         tags: [],
       }
     },
@@ -31,6 +45,12 @@
       searchOnTags(){
         console.log("hi")
       },
+      addTag(e){
+        if (e.key==='Enter' && this.tag){
+            this.tags.push(this.tag)
+            this.tag = ''
+        }
+      }
     }
   }
   </script>
@@ -72,5 +92,16 @@
     display: inline;
     padding: 5px;
   }
+
+  label{
+        display: inline-block;
+        margin-left: 5px;
+        margin-left: 20px;
+    }
+
+  input[type="checkbox"]{
+    margin: 0 0 10px 0;
+  }
+
   </style>
   
