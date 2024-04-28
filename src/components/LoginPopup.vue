@@ -3,9 +3,9 @@
         <div class="popup">
             <form action = "/login-submit">
                 <label for ="login"> Login: </label><br>
-                <input type = "text" id = "login" name="login" value=""><br>
+                <input type ="login" v-model="login"><br>
                 <label for = "password">Password:</label><br>
-                <input type="text" id = "password" name="password" value=""><br>
+                <input type="password" v-model="password"><br>
                 <button class="submit">Submit</button>
             </form>
         </div>
@@ -16,13 +16,23 @@
     export default {
     name: 'LoginPopup',
     data(){
-        
-    },
+        return{
+        login: '',
+        password: '',
+    }
+},
     methods: {
         closePopup(){
             this.$emit('close')
         }
-    }
+    },
+    // mounted(){
+    //     if (this.password != passwords){
+    //         this.message = 'wrong'
+    //     } else {
+    //         this.message = 'logged in'
+    //     }
+    // }
   }
 </script>
 

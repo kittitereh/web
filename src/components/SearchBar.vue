@@ -5,14 +5,14 @@
         <input
               class="search-input"
               placeholder="e.g. Moscow"
-              type="text"
-              autocomplete="off"/>
+              type="tags"
+              v-model="tags"/>
         <button class="search-button" @click="searchOnTags">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
-      <ul class="tags-ul" v-if="hashtags">
-        <li v-for="h in hashtags">#{{ h }}</li>
+      <ul class="tags-ul" v-if="tags">
+        <li v-for="h in tags">#{{ h }}</li>
       </ul>
     </div>
     
@@ -24,7 +24,7 @@
     name: 'App',
     data(){
       return{
-        hashtags: ["Moscow", "art", "history"],
+        tags: [],
       }
     },
     methods: {

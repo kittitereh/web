@@ -13,12 +13,8 @@
         <button class="sign-up" @click="toggleCreateAccountPopup"> Sign Up </button>
     </nav>
     <SearchBar/>
-    <div v-if="showLoginPopup"> 
-      <LoginPopup @close="toggleLoginPopup"/>
-    </div>
-    <div v-if="showCreateAccountPopup"> 
-      <CreateAccountPopup @close="toggleCreateAccountPopup"/>
-    </div>
+    <LoginPopup v-if="showLoginPopup" @close="toggleLoginPopup"/>
+    <CreateAccountPopup  v-if="showCreateAccountPopup" @close="toggleCreateAccountPopup"/>
     <button @click="toggleLoginPopup">Write</button>
   </div>
 </template>
