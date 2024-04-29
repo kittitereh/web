@@ -134,7 +134,6 @@ export default {
     min-width: 120px;
     min-height: 40px;
     max-width: 160px;
-    max-height: 60px;
     will-change: transform;
   }
 

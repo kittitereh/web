@@ -1,13 +1,14 @@
 <template>
     <div class="backdrop" @click.self="closePopup">
         <div  class="popup" id="createAccForm"> 
-            <form action = "/create-account">
+            <form @submit.prevent="handleCreateAccount">
                 <label for ="full_name"> Full Name: </label>
                 <input type = "full_name" required v-model="full_name">
                 <label for ="login"> Login: </label>
                 <input type = "login" required v-model="login">
                 <label for = "password">Password:</label>
                 <input type="password" required v-model="password">
+                <div v-if="passwordError" class="error">{{ passwordError }}</div>
                 <label for = "email">Email:</label>
                 <input type="email" v-model="email">
                 <label for = "country" required >Country:</label>
@@ -20,13 +21,16 @@
                     <option value="guide"> Guide </option>
                     <option value="tourist"> Tourist</option>
                 </select>
-               
-            </form> 
-            <div>
-                <input type="checkbox" required v-model="terms">
-                <label>Accept terms and conditions</label>
-            </div>
-            <button class="action-button" v-on:click="">Submit</button>
+
+                <div>
+                    <input type="checkbox" required v-model="terms">
+                    <label>Accept terms and conditions</label>
+                </div>
+
+                <div class="submit">
+                    <button type="submit" class="action-button">Careate as Account</button>
+                </div>
+            </form>
         </div> 
     </div>
 </template>
@@ -43,12 +47,17 @@
             country: '',
             role: 'Tourist',
             terms: false,
+            passwordError: ''
         }
         
     },
     methods: {
         closePopup(){
             this.$emit('close')
+        },
+        handleCreateAccount(){
+            this.passwordError = this.password.length > 5 ? 
+            '': 'Password must be over 5 chars long'
         }
     }
   }
@@ -89,5 +98,11 @@
         margin-left: 20px;
         position: relative;
         width: 16px;
+    }
+
+    .error{
+        color: red;
+        font-size: 0.9em;
+        font-weight: bold;
     }
 </style>

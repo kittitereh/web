@@ -37,7 +37,7 @@
             <label>Longer trip</label>
         </div>
       <ul class="tags-ul" v-if="tags">
-        <li v-for="h in tags">#{{ h }}</li>
+        <li v-for="t in tags" :key="t" class="clickable" @click="deleteClickable">#{{ t }}</li>
       </ul>
     </div>
     
@@ -62,6 +62,9 @@
             this.tags.push(this.tag)
             this.tag = ''
         }
+      },
+      deleteClickable(){
+        this.tags.pop(this.tag)
       }
     }
   }
@@ -113,6 +116,10 @@
 
   input[type="checkbox"]{
     margin: 0 0 10px 0;
+  }
+
+  .clickable:hover{
+    color: green;
   }
 
   </style>

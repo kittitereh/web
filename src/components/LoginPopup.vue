@@ -6,7 +6,7 @@
                 <input type ="login" v-model="login"><br>
                 <label for = "password">Password:</label><br>
                 <input type="password" v-model="password"><br>
-                <button class="saction-button">Submit</button>
+                <button class="action-button">Submit</button>
             </form>
         </div>
     </div>
