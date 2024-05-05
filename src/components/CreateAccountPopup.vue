@@ -58,6 +58,9 @@
         handleCreateAccount(){
             this.passwordError = this.password.length > 5 ? 
             '': 'Password must be over 5 chars long'
+            if (!this.passwordError){
+                
+            }
         }
     }
   }

@@ -1,33 +1,31 @@
 <template>
   <div>
     <nav class="header-container">   
-        <a href="/"><img src="./assets/logo.svg" alt="logo" class="logo"></a>
+        <router-link to="/"><img src="./assets/logo.svg" alt="logo" class="logo"></router-link>
         <nav class = "menu"> 
           <ul role="list" class="menu-list">
-            <li><a href="#"> Blog </a></li>
-            <li><a href="#"> About Us </a></li>
-            <li><a href="#"> For business </a></li>   
+            <li><router-link to="/about"> About Us </router-link></li>
          </ul>
         </nav> 
         <button class="action-button" @click="toggleLoginPopup"> SignIn </button>
         <button class="action-button" @click="toggleCreateAccountPopup"> SignUp </button>
     </nav>
-    <SearchBar/>
-    <button class="action-button">Find a tour</button>
     <LoginPopup v-if="showLoginPopup" @close="toggleLoginPopup"/>
     <CreateAccountPopup  v-if="showCreateAccountPopup" @close="toggleCreateAccountPopup"/>
-    <!-- <button @click="toggleLoginPopup">Write</button> -->
   </div>
+  <router-view/>
 </template>
 
 <script>
 import LoginPopup from "./components/LoginPopup.vue"
 import SearchBar from "./components/SearchBar.vue"
 import CreateAccountPopup from "./components/CreateAccountPopup.vue"
+import ToursScroll from "./components/ToursScroll.vue"
+import router from "./router"
 
 export default {
   name: 'App',
-  components: {LoginPopup, SearchBar, CreateAccountPopup},
+  components: { LoginPopup, SearchBar, CreateAccountPopup, ToursScroll, router },
   data(){
     return{
     showLoginPopup: false,
