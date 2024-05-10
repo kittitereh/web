@@ -23,5 +23,6 @@ export default {
         // .catch(err => console.log(`${err.message}`))
         .then(data => this.tour = data)
         .catch(err => console.log(`${err.message}. tour: ${this.tour}`))
-}}
+  }
+}
 </script>
