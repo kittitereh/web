@@ -18,7 +18,7 @@ const routes = [
   {
     path: "/tours",
     // redirect: "/"
-    name: 'Tour'
+    name: 'Tours'
   },
   {
     path: '/tours/:tour_id',

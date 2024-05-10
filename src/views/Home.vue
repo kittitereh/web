@@ -45,7 +45,7 @@
     </div>
     <!-- <SearchBar/> -->
     <button class="action-button" @click="searchOnTags">Find a tour</button>
-    <TourList :tours="tours"/>
+  
     <div v-if="tours.length"> 
       <div class="tour" v-for="tour in tours">
           <h2> {{ tour.guide }}</h2>
@@ -66,13 +66,12 @@
 import LoginPopup from "../components/LoginPopup.vue"
 import SearchBar from "../components/SearchBar.vue"
 import CreateAccountPopup from "../components/CreateAccountPopup.vue"
-import TourList from "../components/TourList.vue"
 import router from "../router"
 import { ref } from "vue"
 
 export default {
   name: 'Home',
-  components: { LoginPopup, SearchBar, CreateAccountPopup, TourList,router },
+  components: { LoginPopup, SearchBar, CreateAccountPopup, router },
   setup(){
     const tours = ref([])
     const error = ref([null])
