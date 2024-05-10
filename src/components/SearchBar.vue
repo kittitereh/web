@@ -1,5 +1,5 @@
 <template>
-    <div class="first"> 
+    <div> 
       <h1> Enter something to find a tour about it: </h1>
       <div class="search-div">
         <input

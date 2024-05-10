@@ -20,12 +20,12 @@
 import LoginPopup from "./components/LoginPopup.vue"
 import SearchBar from "./components/SearchBar.vue"
 import CreateAccountPopup from "./components/CreateAccountPopup.vue"
-import ToursScroll from "./components/ToursScroll.vue"
+// import ToursScroll from "./components/ToursScroll.vue"
 import router from "./router"
 
 export default {
   name: 'App',
-  components: { LoginPopup, SearchBar, CreateAccountPopup, ToursScroll, router },
+  components: { LoginPopup, SearchBar, CreateAccountPopup, router },
   data(){
     return{
     showLoginPopup: false,

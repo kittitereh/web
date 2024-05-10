@@ -1,0 +1,18 @@
+{
+    "tours":[
+        {
+        "id": "1",
+        "guide":"Anna",
+        "tour_description": "fklflkflkflk",
+        "tour_tags": ["Moscow", "Kremlin"],
+        "tour_id": "1"
+        },
+        {
+        "id": "2", 
+        "guide":"Masha",
+        "tour_description": "kd,dm,mdmsdflk",
+        "tour_tags": ["Spb", "history", "1-2 days"],
+        "tour_id": "2"
+        }
+    ]
+}
