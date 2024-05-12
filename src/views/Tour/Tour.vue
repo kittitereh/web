@@ -1,10 +1,16 @@
 <template>
-  <div class="about" v-if="tour">
-    <h1>This is a tour page</h1>
-    <p>{{tour_id}}</p>
-    <!-- <p>{{tours}}</p> -->
-    <p>{{tour.guide }}</p>
-    <p>{{tour.tour_description }}</p>
+  <div>
+    <div class="about" v-if="tour">
+      <h1>This is a tour page</h1>
+      <p>{{tour_id}}</p>
+      <!-- <p>{{tours}}</p> -->
+      <p>{{tour.guide }}</p>
+      <p>{{tour.tour_description }}</p>
+    </div>
+    <div>
+    <!-- Вместо router=link -->
+      <button @click="$router.push('/chats')" class="action-button">Contact this guide</button>
+    </div>
   </div>
 </template>
 

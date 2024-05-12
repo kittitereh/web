@@ -7,9 +7,8 @@
     <div v-if="tours.length"> 
       <div class="tour" v-for="tour in tours">
           <h2> {{ tour.guide }}</h2>
-          <p> {{ tour.tour_description }}</p>
           <router-link :to="{name: 'Tour', params:{tour_id: tour.tour_id}}">
-              Details
+              <h2>{{ tour.tour_description }}</h2>
           </router-link>
       </div>
     </div>
@@ -78,6 +77,8 @@ export default {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+
+  
 }
 
 </style>

@@ -43,7 +43,8 @@ const routes = [
   {
     path: '/chats',
     name: 'Chats',
-    component: Chats
+    component: Chats,
+    props: true
   },
 
   //catch all 404
