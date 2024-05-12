@@ -7,15 +7,22 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "agora-rtm-sdk": "^2.1.9",
     "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
     "json-server": "^1.0.0-alpha.23",
-    "vue": "^3.2.13",
+    "pusher-js": "^8.4.0-rc2",
+    "react-chat-engine-pretty": "^0.1.8",
+    "uuid": "^9.0.1",
+    "veaury": "^2.3.18",
+    "vue": "^3.4.27",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.8"
   }
 }

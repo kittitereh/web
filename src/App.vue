@@ -4,28 +4,32 @@
         <router-link to="/"><img src="./assets/logo.svg" alt="logo" class="logo"></router-link>
         <nav class = "menu"> 
           <ul role="list" class="menu-list">
-            <li><router-link to="/about"> About Us </router-link></li>
+            <li><router-link to="/about"> About Us </router-link></li> 
+            <li><router-link to="/login"> Login </router-link></li>
+            <li><router-link to="/register"> Sign Up </router-link></li>
          </ul>
         </nav> 
-        <button class="action-button" @click="toggleLoginPopup"> SignIn </button>
-        <button class="action-button" @click="toggleCreateAccountPopup"> SignUp </button>
+        <!-- <button class="action-button" @click="toggleLoginPopup"> SignIn </button>
+        <button class="action-button" @click="toggleCreateAccountPopup"> SignUp </button> -->
+      
     </nav>
-    <LoginPopup v-if="showLoginPopup" @close="toggleLoginPopup"/>
-    <CreateAccountPopup  v-if="showCreateAccountPopup" @close="toggleCreateAccountPopup"/>
+    <!-- <LoginPopup v-if="showLoginPopup" @close="toggleLoginPopup"/>
+    <CreateAccountPopup  v-if="showCreateAccountPopup" @close="toggleCreateAccountPopup"/> -->
   </div>
   <router-view/>
 </template>
 
 <script>
-import LoginPopup from "./components/LoginPopup.vue"
+// import LoginPopup from "./components/LoginPopup.vue"
 import SearchBar from "./components/SearchBar.vue"
-import CreateAccountPopup from "./components/CreateAccountPopup.vue"
-// import ToursScroll from "./components/ToursScroll.vue"
+// import CreateAccountPopup from "./components/CreateAccountPopup.vue"
+
 import router from "./router"
 
 export default {
   name: 'App',
-  components: { LoginPopup, SearchBar, CreateAccountPopup, router },
+  // components: { LoginPopup, SearchBar, CreateAccountPopup, router },
+  components: {SearchBar,router },
   data(){
     return{
     showLoginPopup: false,
@@ -33,12 +37,12 @@ export default {
   }
   },
   methods:{
-    toggleLoginPopup(){
-      this.showLoginPopup = !this.showLoginPopup
-  },
-    toggleCreateAccountPopup(){
-      this.showCreateAccountPopup = !this.showCreateAccountPopup
-  }
+  //   toggleLoginPopup(){
+  //     this.showLoginPopup = !this.showLoginPopup
+  // },
+  //   toggleCreateAccountPopup(){
+  //     this.showCreateAccountPopup = !this.showCreateAccountPopup
+  // }
   }}
 
 </script>
@@ -54,6 +58,7 @@ export default {
   padding: 0px;
   box-sizing: border-box;
 }
+
 
 .header-container {
     width: 100%;

@@ -18,15 +18,17 @@
 </template>
 
 <script>
-import LoginPopup from "../components/LoginPopup.vue"
 import SearchBar from "../components/SearchBar.vue"
-import CreateAccountPopup from "../components/CreateAccountPopup.vue"
 import router from "../router"
 import { ref } from "vue"
 
 export default {
   name: 'Home',
-  components: { LoginPopup, SearchBar, CreateAccountPopup, router },
+  components: {  SearchBar, router },
+  data(){
+    return{
+    }
+  },
   setup(){
     const tours = ref([])
     const error = ref([null])
@@ -47,21 +49,14 @@ export default {
     load()
     return {tours, error}
 },
-  data(){
-    return{
-    showLoginPopup: false,
-    showCreateAccountPopup: false,
-    tag: '',
-    // tags: [],
-    // tours: [],
-  }},
+
   methods:{
-    toggleLoginPopup(){
+  //   toggleLoginPopup(){
       
-  },
-    toggleCreateAccountPopup(){
-      this.showCreateAccountPopup = !this.showCreateAccountPopup
-  },
+  // },
+  //   toggleCreateAccountPopup(){
+  //     this.showCreateAccountPopup = !this.showCreateAccountPopup
+  // },
   // mounted(){
   //     fetch('http://localhost:3000/tours')
   //       .then(res => res.json())

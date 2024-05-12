@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Tour from '../views/Tour/Tour.vue'
 import About from '../views/About.vue'
+import LoginPage from '../views/LoginPage.vue'
+import CreateAccountPage from '../views/CreateAccountPage.vue'
 import Home from '../views/Home.vue'
 import NotFound from '../views/NotFound.vue'
+import Chats from '../views/Chats.vue'
 
 const routes = [
   {
@@ -16,6 +19,16 @@ const routes = [
     component: About
   },
   {
+    path: '/login',
+    name: 'LoginPage',
+    component: LoginPage
+  },
+  {
+    path: '/register',
+    name: 'CreateAccountPage',
+    component: CreateAccountPage
+  },
+  {
     path: "/tours",
     // redirect: "/"
     name: 'Tours'
@@ -25,6 +38,12 @@ const routes = [
     name: 'Tour',
     component: Tour,
     props: true
+  },
+
+  {
+    path: '/chats',
+    name: 'Chats',
+    component: Chats
   },
 
   //catch all 404

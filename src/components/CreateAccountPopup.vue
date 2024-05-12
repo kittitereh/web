@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="submit">
-                    <button type="submit" class="action-button">Careate as Account</button>
+                    <button type="submit" class="action-button" @click="handleCreateAccount">Create as Account</button>
                 </div>
             </form>
         </div> 
